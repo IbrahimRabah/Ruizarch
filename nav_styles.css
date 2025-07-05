@@ -1,0 +1,92 @@
+/* Enhanced Navigation Styles - Right to Left */
+html {
+  scroll-behavior: smooth;
+}
+
+.mil-navigation nav ul {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.mil-navigation nav ul li {
+  position: relative;
+  margin: 0 25px 0 0;
+}
+
+.mil-navigation nav ul li a {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  padding: 12px 0 !important;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Animated underline effect */
+.mil-navigation nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c19459, #d4a574);
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 2px;
+}
+
+/* Hover effects */
+.mil-navigation nav ul li a:hover {
+  color: #c19459 !important;
+  transform: translateY(-2px);
+}
+
+.mil-navigation nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Active state */
+.mil-navigation nav ul li.active a,
+.mil-navigation nav ul li.mil-active a {
+  color: #c19459 !important;
+  font-weight: 600 !important;
+}
+
+.mil-navigation nav ul li.active a::after,
+.mil-navigation nav ul li.mil-active a::after {
+  width: 100%;
+  background: linear-gradient(90deg, #c19459, #b8955e);
+}
+
+/* Additional hover effect for active items */
+.mil-navigation nav ul li.active a:hover,
+.mil-navigation nav ul li.mil-active a:hover {
+  color: #d4a574 !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .mil-navigation nav ul li {
+    margin: 0 15px 0 0;
+  }
+  
+  .mil-navigation nav ul li a {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mil-navigation nav ul li {
+    margin: 0 10px 0 0;
+  }
+  
+  .mil-navigation nav ul li a {
+    font-size: 15px !important;
+  }
+}
+
+/* Section scroll offset */
+section[id] {
+  scroll-margin-top: 100px;
+}
